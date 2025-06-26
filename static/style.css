@@ -1,0 +1,500 @@
+:root{
+    --HeadingFontColour : rgb(44,62,80);
+    --MenuButtonColour : rgb(205, 49, 49);
+    --PopupBackgroundColour : rgb(235, 238, 201);
+    --SubstituteFontColour : rgb(0, 128, 255);
+    --SenderColour : rgb(17, 118, 219);
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    text-align: center;
+    font-size: 8vh;
+    color: var(--HeadingFontColour);
+    position: relative;
+    
+    
+}
+
+.menu{
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    width: 40px ;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px;
+    position: absolute;
+    top: 0px;
+
+}
+
+.menu span{
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: var(--MenuButtonColour);
+    border-radius: 5px;
+
+}
+
+.MessageContainer{
+    border: 2px solid black;
+    height: 70vh;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 
+        inset 0 8px 20px -4px black,
+        inset 0 -8px 8px -6px black;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    padding: 15px;
+
+
+}
+
+.inputbox{
+    position: relative;
+    height: 50px;
+    width: 95vw;
+    border: none;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+
+}
+
+.inputbox input{
+    width: 100%;
+    height: 50px;
+    border: 2px solid black;
+    font-size: 125%;
+    border-radius: 100px;
+    padding-left: 20px;
+    padding-right: 70px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.submitbutton{
+    position: absolute;
+    height: 80%;
+    top: 0;
+    right: 0;
+    width: 40px;
+    margin-top: 4px;
+    margin-right: 5px;
+    border-radius: 100px;
+    font-size: 20px;
+    
+    
+}
+
+
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 100; 
+  display: none;
+}
+
+#popup{
+    position: absolute;
+    border: 2px solid black;
+    width: 70vw;
+    height: 90vh;
+    border-radius: 40px;
+    margin-top: 10px;
+    margin-left: 25px;
+    top: 0;
+    box-shadow: 2px 2px 1000px 50px;
+    z-index: 101;
+    display: none;
+    background-color: var(--PopupBackgroundColour);
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+
+.freeze-body {
+  overflow: hidden;
+}
+
+.areaclose{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+.popupbox{
+    height: 90vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    margin-left: 5%;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.box1{
+    height: auto;
+    margin-top: 15px;
+    
+}
+
+.box2{
+    position: relative;
+    top: 100px;
+    height: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+
+
+}
+
+.box2 button{
+    
+    width: 100%;
+    height: 40px;
+    overflow: hidden;        
+    white-space: nowrap;   
+    text-overflow: ellipsis;
+    margin-bottom: 10px;  
+    border-radius: 10px;
+       
+    
+
+}
+
+.crossbutton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+    margin-right: 5px;
+    margin-top: 10px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+}
+
+.Newchatbutton{
+    position: absolute;
+    top: 0;
+    right: 50px;
+    border-radius: 50px;
+    height: 40px;
+    width: 70px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.logo img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-left: 5px;
+
+}
+
+.name{
+    position: absolute;
+    top: 0;
+    left: 55px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.substitute{
+    font-size: 5vw;
+    text-align: center;
+    margin-top: 20vh;
+    color: var(--SubstituteFontColour);
+}
+
+.NoChat{
+    text-align: center;
+    font-weight: bold;
+}
+
+.menu {
+    border: none;
+
+}
+
+.sender{
+    font-weight: bold;
+    
+}
+
+
+@media(max-width: 460px){
+    .menu{
+        width: 30px;
+        height: 25px;
+    }
+
+    header{
+        font-size: 6vh;
+    }
+    .MessageContainer{
+        height:70vh;
+    }
+    .inputbox{
+        margin-left: 20px;
+        height: 40px;
+        width: 90vw;
+        font-size: 25px;
+    }
+    .submitbutton{
+        height: 40px;
+    }
+    
+    .inputbox input{
+        font-size: 80%;
+    }
+    #popup{
+        width: 90vw;
+    }
+
+}
+
+@media(min-width: 450px) and (max-width: 1050px){
+    .MessageContainer{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .menu{
+        margin: 10px;
+    }
+
+}
+
+@media(max-height: 370px){
+    .MessageContainer{
+        height: 65vh;
+    }
+ 
+    .menu{
+        height: 20px;
+        width: 25px;
+        margin-top: 5px;
+    }
+    
+}
+
+@media(max-height: 420px){
+    .box2{
+        height: 45vh;
+    }
+}
+
+@media(max-width: 350px){
+    .name {
+        font-size: 15px;
+    }
+    .logo img{
+        height: 30px;
+        width: 30px;
+    }
+
+}
+
+/* ===== Dynamic, Fascinating Colors & Smooth Transitions ===== */
+
+/* Animated gradient background for the body */
+body {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ffecd2, #fcb69f, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradientBG 18s ease-in-out infinite;
+    transition: background 1s;
+}
+
+/* Keyframes for animated gradient */
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    25% {background-position: 50% 100%;}
+    50% {background-position: 100% 50%;}
+    75% {background-position: 50% 0%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Smooth transitions for all major containers */
+header, .MessageContainer, .inputbox, #popup, .msg, .sender, .submitbutton, .PrevChatbuttons {
+    transition: 
+        background 0.6s cubic-bezier(.4,2,.6,1), 
+        color 0.4s cubic-bezier(.4,2,.6,1),
+        box-shadow 0.5s cubic-bezier(.4,2,.6,1);
+}
+
+/* Vibrant glassmorphism effect for chat container and popup */
+.MessageContainer, #popup {
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(8px);
+    border-radius: 24px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+}
+
+/* Sender name with a color fade and shadow */
+.sender {
+    color: #4f8cff;
+    background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+    border-radius: 8px;
+    padding: 2px 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(161,196,253,0.15);
+    display: inline-block;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Message bubble with animated hover effect */
+.msg {
+    background: linear-gradient(90deg, #fbc2eb 0%, #a6c1ee 100%);
+    color: #2d2d2d;
+    border-radius: 18px 18px 18px 6px;
+    padding: 10px 18px;
+    margin: 0 0 8px 0;
+    box-shadow: 0 2px 12px rgba(251,194,235,0.12);
+    display: inline-block;
+    max-width: 80%;
+    word-break: break-word;
+    transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+}
+.msg:hover {
+    background: linear-gradient(90deg, #a1c4fd 0%, #fbc2eb 100%);
+    color: #1a237e;
+    box-shadow: 0 4px 24px rgba(161,196,253,0.25);
+}
+
+/* Input box with soft shadow and focus effect */
+.inputbox input {
+    background: rgba(255,255,255,0.85);
+    border: 2px solid #a1c4fd;
+    color: #2d2d2d;
+    box-shadow: 0 2px 8px rgba(161,196,253,0.10);
+    transition: border 0.4s, box-shadow 0.4s;
+}
+.inputbox input:focus {
+    border: 2px solid #fbc2eb;
+    box-shadow: 0 4px 16px rgba(251,194,235,0.18);
+    outline: none;
+}
+
+/* Submit button with animated gradient and shadow */
+.submitbutton {
+    background: linear-gradient(135deg, #a1c4fd 0%, #fbc2eb 100%);
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(161,196,253,0.15);
+    cursor: pointer;
+    transition: background 0.5s, box-shadow 0.5s, transform 0.2s;
+}
+.submitbutton:hover, .submitbutton:focus {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a1c4fd 100%);
+    box-shadow: 0 4px 16px rgba(251,194,235,0.25);
+    transform: scale(1.08);
+}
+
+/* Previous chat buttons with color pop */
+.PrevChatbuttons {
+    background: linear-gradient(90deg, #a1c4fd 0%, #fbc2eb 100%);
+    color: #2d2d2d;
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(161,196,253,0.10);
+    transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+}
+.PrevChatbuttons:hover, .PrevChatbuttons:focus {
+    background: linear-gradient(90deg, #fbc2eb 0%, #a1c4fd 100%);
+    color: #1a237e;
+    box-shadow: 0 4px 16px rgba(251,194,235,0.18);
+}
+
+/* Popup glass effect and smooth transitions */
+#popup {
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(12px);
+    border-radius: 32px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    transition: background 0.6s, box-shadow 0.6s;
+}
+
+/* New chat and close buttons with color and hover */
+.Newchatbutton, .crossbutton {
+    background: linear-gradient(135deg, #a1c4fd 0%, #fbc2eb 100%);
+    color: #2d2d2d;
+    border: none;
+    box-shadow: 0 2px 8px rgba(161,196,253,0.10);
+    transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+}
+.Newchatbutton:hover, .crossbutton:hover {
+    background: linear-gradient(135deg, #fbc2eb 0%, #a1c4fd 100%);
+    color: #1a237e;
+    box-shadow: 0 4px 16px rgba(251,194,235,0.18);
+}
+
+/* Substitute text with animated color */
+.substitute {
+    background: linear-gradient(90deg, #fbc2eb 0%, #a1c4fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: substituteColor 3s linear infinite alternate;
+    font-weight: bold;
+    transition: background 0.5s;
+}
+@keyframes substituteColor {
+    0% { filter: hue-rotate(0deg);}
+    100% { filter: hue-rotate(60deg);}
+}
+
+/* Smooth fade for overlay */
+#overlay {
+    transition: background 0.5s;
+}
+

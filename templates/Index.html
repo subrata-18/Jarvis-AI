@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis - Your AI Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='Logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+
+
+</head>
+
+<body>
+
+    <div class="head">
+        <header>Jarvis AI</header>
+        <button class="menu" onclick="OpenPopup()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div class="MessageContainer">
+        {% for sender, message in Messages %}
+        <div class="sender">{{sender}}</div>
+        <br>
+        <div class="msg">{{message}}</div>
+        <br><br>
+        {% endfor %}
+        {% if Messages ==[] %}
+        <div class="substitute">Type Anything to search</div>
+        {% endif %}
+
+
+    </div>
+
+    <div class="inputbox">
+        <form method="POST">
+            <input type="text" name="inputmessage" placeholder="Ask Something" autocomplete="off" class="inputfield">
+            </button>
+            <button class="submitbutton" type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <div id="overlay">
+        <div id="popup">
+            <div class="popupbox box1">
+                <form method="POST">
+                    <button class="Newchatbutton" name="Newchat" value="Newchat">New Chat</button>
+                </form>
+                <button class="crossbutton" onclick="ClosePopup()"><i class="fas fa-xmark"></i></button>
+                <div class="logo"><img src="{{ url_for('static', filename='Logo.png') }}" alt="Logo"></div>
+                <div class="name">Jarvis AI</div>
+
+            </div>
+            <div class="popupbox box2">
+
+                {% for name in File_List|reverse %}
+                <form method="POST">
+                    <button class="PrevChatbuttons" name="Chatname" value="{{name}}"
+                        onclick="ClosePopup()">{{name}}</button>
+                </form>
+                {% endfor %}
+                {% if File_List == [] %}
+                <div class="NoChat">No Previous Chats</div>
+                {% endif %}
+
+            </div>
+        </div>
+        <button class="areaclose" onclick="ClosePopup()"></button>
+    </div>
+
+
+
+
+</body>
+
+</html>
